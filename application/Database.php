@@ -48,12 +48,10 @@ class Database
     }
    
 
-    public function execute_procedure($stmt){
+    public function execute_procedure($name,$array=null){
         
-   /* Sentencia preparada, etapa 1: preparación */
-    if (!($sentencia = $mysqli->prepare("INSERT INTO test(id) VALUES (?)"))) {
-        echo "Falló la preparación: (" . $mysqli->errno . ") " . $mysqli->error;
-    } 
+        $this->_resultado=$this->connect()->query($stmt);
+        return $this->_resultado->fetch_assoc();
         
     }
 
