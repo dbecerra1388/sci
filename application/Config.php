@@ -48,6 +48,13 @@ define('DB_TYPE','Mysl');//Mysl;Sql;PostgreSQL;oracle
 define('DB_PREFIX','sci');
 define('DB_PORT','3306');
 define('DB_USER_MULTIPLE',0);
+
+define('DB_TYPE_USER',0);
+define('DB_USER_SELECT','');
+define('DB_USER_INSERT','');
+define('DB_USER_UPDATE','');
+define('DB_USER_DELETE','');
+
 define('DB_PASS_SELECT','');
 define('DB_PASS_INSERT','');
 define('DB_PASS_UPDATE','');

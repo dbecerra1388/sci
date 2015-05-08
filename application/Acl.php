@@ -40,12 +40,11 @@ class ACL
     
     public function getRole()
     {
-        $role = $this->_db->execute_query(
-                "select role from usuarios " .
-                "where id = {$this->_id}"
-                );
+        $stm="select role from usuarios " .
+                "where id = {$this->_id}";
+        $role = $this->_db->execute_query($stm);
                 
-//        $role = $role->fetch();
+//        $role = $role->fetch();       
         return $role['role'];
     }
     

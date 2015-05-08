@@ -21,8 +21,12 @@ try{
     $registry->_request = new Request();
     $registry->_db = new Database();
     $registry->_acl = new ACL();
+    
+    Bootstrap::run($registry->_request);    
+    $stmt="INSERT INTO sexo VALUES(NULL,'Otros','ot',1,NOW()),(NULL,'Otros2','ot',1,NOW())";
+    $registry->_db->execute_query($stmt);
+    echo $registry->_db->get_num_affected_rows();
 
-    Bootstrap::run($registry->_request);
 }
 catch(Exception $e){
     echo $e->getMessage();
